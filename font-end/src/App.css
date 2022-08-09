@@ -1,0 +1,62 @@
+*,*::after, *::before{
+  box-sizing: border-box;
+
+}
+
+.containerTop {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerMiddle {
+  display: flex;
+  height: auto;
+}
+
+.topSection, .leftSection, .middleSection, .rightSection {
+  border: 2px solid blue;
+  }
+
+.topSection {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+
+.leftSection{
+  width: 23%;
+  height: 400px;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.left-title{
+  font-weight: bold;
+  height:25%;
+  border: 1px dashed red;
+}
+
+.left-portrait{
+  height:30%;
+  border: 1px dashed red;
+}
+
+.left-info{
+  height: 45%;
+  border: 1px dashed red;
+}
+
+.middleSection{
+  height: 600px;
+  width: 50%;
+  margin-right: 10px;
+}
+
+.rightSection{
+  width: 23%;
+  height: 300px;
+}
