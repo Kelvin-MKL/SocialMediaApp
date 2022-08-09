@@ -54,6 +54,28 @@
   height: 600px;
   width: 50%;
   margin-right: 10px;
+  overflow: scroll;
+
+}
+
+.middleSection::-webkit-scrollbar{
+    display: none;
+  }
+
+.post-container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px dashed green;
+}
+
+.post-title{
+  border: 1px double grey;
+  margin-bottom: 5px;
+}
+
+.post-content{
+  border: 1px double grey;
 }
 
 .rightSection{
