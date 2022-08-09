@@ -51,22 +51,40 @@
 }
 
 .middleSection{
+  display: flex;
+  flex-direction: column;
   height: 600px;
   width: 50%;
   margin-right: 10px;
-  overflow: scroll;
+ 
 
 }
 
-.middleSection::-webkit-scrollbar{
+.innerMiddleBottom::-webkit-scrollbar{
     display: none;
   }
+
+.innerMiddleTop{
+  height: 200px;
+  border: 1px dashed red;
+}
+
+.innerMiddleBottom{
+  border: 1px dashed red;
+  overflow: scroll;
+}
+
+
+input::placeholder{
+  font-size: xx-small;
+}
 
 .post-container{
   display: flex;
   flex-direction: column;
   padding: 10px;
   border: 1px dashed green;
+
 }
 
 .post-title{
@@ -76,6 +94,15 @@
 
 .post-content{
   border: 1px double grey;
+}
+
+.btn-del{
+  margin-top: 5px;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  
+  
 }
 
 .rightSection{

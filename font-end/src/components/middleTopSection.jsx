@@ -1,23 +1,39 @@
-import React from "react";
+import React, { useRef } from "react";
 
-function MiddleTioSection() {
+function MiddleTopSection({ createPost }) {
+  const titleRef = useRef();
+  const contentRef = useRef();
+
   return (
     <div className='post-container'>
-      <div className='post-title'>
+      <div className=''>
         <input
+          ref={titleRef}
           placeholder='Insert title here...'
-          style={{ outline: "none", border: "none", width: "100%" }}
+          style={{
+            outline: "none",
+            border: "none",
+            width: "100%",
+          }}
         ></input>
       </div>
-      <div className='post-content'>
+      <div className=''>
         <input
+          ref={contentRef}
           placeholder='Insert content here...'
           style={{ outline: "none", border: "none", width: "100%" }}
         ></input>
       </div>
-      <button style={{ marginTop: "5px" }}>Post</button>
+      <button
+        onClick={() =>
+          createPost(titleRef.current.value, contentRef.current.value)
+        }
+        style={{ marginTop: "5px" }}
+      >
+        Post
+      </button>
     </div>
   );
 }
 
-export default MiddleTioSection;
+export default MiddleTopSection;
