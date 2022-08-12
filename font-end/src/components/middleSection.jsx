@@ -9,7 +9,7 @@ function MiddleSection({ posts, createPost, deletePost, isAuth }) {
       </div>
       <div className='innerMiddleBottom'>
         {posts.map((post) => (
-          <div id={post._id} className='post-container'>
+          <div key={post._id} className='post-container'>
             <div className='post-title'>{post.title}</div>
             <div className='post-content'>{post.content} </div>
             {isAuth ? (
