@@ -1,7 +1,7 @@
 import React from "react";
 
 function RightSection() {
-  return <div className='rightSection'>This is right</div>;
+  return <div className='rightSection'>Right section</div>;
 }
 
 export default RightSection;

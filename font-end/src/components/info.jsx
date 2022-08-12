@@ -5,7 +5,7 @@ function Info({ user, isAuth }) {
     <div style={{ fontWeight: "bold" }} className='left-info'>
       Info
       <br></br>
-      <div style={{ fontSize: "x-small" }}>
+      <div style={{ fontSize: "x-small", wordBreak: "break-word" }}>
         {isAuth && user.name}
         <br />
         {isAuth && user.email}

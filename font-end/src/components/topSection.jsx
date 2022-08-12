@@ -5,15 +5,21 @@ function TopSection({ isAuth, onAuth }) {
     <>
       <div className='topSection'>
         <input
+          id='search'
           style={{ marginRight: "5px", borderRadius: "10px" }}
           placeholder='Search...'
         ></input>
         <button
-          style={{ borderRadius: "10px", background: "red", color: "white" }}
+          id='btn-search'
+          style={{
+            borderRadius: "10px",
+            background: "red",
+            color: "white",
+          }}
         >
           Search
         </button>
-        <div style={{ position: "absolute", right: "10px" }}>
+        <div id='login'>
           <button onClick={() => onAuth()}>
             {isAuth ? "Logout" : "Login"}
           </button>
