@@ -1,6 +1,8 @@
 import React from "react";
+import useUser from "../helper/userContext";
 
-function Info({ user, isAuth }) {
+function Info() {
+  const { user, isAuth } = useUser();
   return (
     <div style={{ fontWeight: "bold" }} className='left-info'>
       Info

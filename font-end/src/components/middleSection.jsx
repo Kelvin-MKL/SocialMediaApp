@@ -1,11 +1,14 @@
 import React from "react";
 import MiddleTopSection from "./middleTopSection";
+import useUser from "../helper/userContext";
 
-function MiddleSection({ posts, createPost, deletePost, isAuth }) {
+function MiddleSection() {
+  const { posts, isAuth, deletePost } = useUser();
+
   return (
     <div className='middleSection'>
       <div style={{ height: "auto" }} className='innerMiddleTop'>
-        <MiddleTopSection createPost={createPost} isAuth={isAuth} />
+        <MiddleTopSection />
       </div>
       <div className='innerMiddleBottom'>
         {posts.map((post) => (

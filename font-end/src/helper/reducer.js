@@ -5,30 +5,33 @@ export const initialState = {
 };
 
 export const reducer = (state, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+
+  switch (type) {
     case "createPost":
+      console.log("reducer create post called");
       const newPost = [...state.posts];
       const tempId = Math.floor(Math.random() * Date.now());
       newPost.unshift({
         _id: tempId,
-        title: action.payload.title,
-        content: action.payload.content,
+        title: payload.title,
+        content: payload.content,
       });
 
       return { ...state, posts: newPost };
 
     case "deletePost":
+      console.log("reducer delete post called");
       const current = [...state.posts];
-      const filtered = current.filter(
-        (post) => post._id !== action.payload._id
-      );
+      const filtered = current.filter((post) => post._id !== payload._id);
       return { ...state, posts: filtered };
 
     case "auth":
+      console.log("reducer handle auth called");
       return { ...state, isAuth: !state.isAuth };
 
     default:
-      return console.log("default");
+      return new Error("no case found.");
   }
 };
 

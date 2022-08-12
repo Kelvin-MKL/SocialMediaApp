@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
+import useUser from "../helper/userContext";
 
-function MiddleTopSection({ createPost, isAuth }) {
+function MiddleTopSection() {
+  const { isAuth, addPost } = useUser();
   const titleRef = useRef();
   const contentRef = useRef();
 
@@ -28,7 +30,7 @@ function MiddleTopSection({ createPost, isAuth }) {
           </div>
           <button
             onClick={() =>
-              createPost(titleRef.current.value, contentRef.current.value)
+              addPost(titleRef.current.value, contentRef.current.value)
             }
             style={{ marginTop: "5px" }}
           >

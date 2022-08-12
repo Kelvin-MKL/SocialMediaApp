@@ -1,6 +1,9 @@
 import React from "react";
+import useUser from "../helper/userContext";
 
-function TopSection({ isAuth, onAuth }) {
+function TopSection() {
+  const { isAuth, handleAuth } = useUser();
+
   return (
     <>
       <div className='topSection'>
@@ -20,7 +23,7 @@ function TopSection({ isAuth, onAuth }) {
           Search
         </button>
         <div id='login'>
-          <button onClick={() => onAuth()}>
+          <button onClick={() => handleAuth()}>
             {isAuth ? "Logout" : "Login"}
           </button>
         </div>
