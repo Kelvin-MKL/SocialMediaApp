@@ -3,12 +3,12 @@ import Title from "./title";
 import Portrait from "./portrait";
 import Info from "./info";
 
-function LeftSection({ user }) {
+function LeftSection({ user, isAuth }) {
   return (
     <div className='leftSection'>
       <Title />
       <Portrait />
-      <Info user={user} />
+      <Info user={user} isAuth={isAuth} />
     </div>
   );
 }

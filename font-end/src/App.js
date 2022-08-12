@@ -6,16 +6,13 @@ import MiddleSection from "./components/middleSection";
 import TopSection from "./components/topSection";
 import { useReducer } from "react";
 import React from "react";
-import { reducer, ACTION } from "./helper/reducer";
+import { reducer, ACTION, initialState } from "./helper/reducer";
 
 const StateContext = React.createContext();
 const DispatchContext = React.createContext();
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, {
-    user: { _id: "213", name: "Kelvin", email: "kelvin@gmail.com" },
-    posts: [{ _id: "1", title: "post1", content: "G'day" }],
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleCreatePost = (title, content) => {
     dispatch({
@@ -31,13 +28,18 @@ function App() {
     });
   };
 
+  const handleAuth = () => {
+    dispatch({ type: ACTION.AUTH });
+  };
+
   return (
     <>
       <div className='containerTop'>
-        <TopSection />
+        <TopSection isAuth={state.isAuth} onAuth={handleAuth} />
         <div className='containerMiddle'>
-          <LeftSection user={state.user} />
+          <LeftSection user={state.user} isAuth={state.isAuth} />
           <MiddleSection
+            isAuth={state.isAuth}
             posts={state.posts}
             createPost={handleCreatePost}
             deletePost={handleDelete}

@@ -1,6 +1,6 @@
 import React from "react";
 
-function TopSection() {
+function TopSection({ isAuth, onAuth }) {
   return (
     <>
       <div className='topSection'>
@@ -13,6 +13,11 @@ function TopSection() {
         >
           Search
         </button>
+        <div style={{ position: "absolute", right: "10px" }}>
+          <button onClick={() => onAuth()}>
+            {isAuth ? "Logout" : "Login"}
+          </button>
+        </div>
       </div>
     </>
   );

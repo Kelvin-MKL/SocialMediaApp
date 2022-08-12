@@ -1,14 +1,14 @@
 import React from "react";
 
-function Info({ user }) {
+function Info({ user, isAuth }) {
   return (
     <div style={{ fontWeight: "bold" }} className='left-info'>
       Info
       <br></br>
       <div style={{ fontSize: "x-small" }}>
-        {user.name}
+        {isAuth && user.name}
         <br />
-        {user.email}
+        {isAuth && user.email}
       </div>
     </div>
   );

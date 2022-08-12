@@ -1,3 +1,9 @@
+export const initialState = {
+  user: { _id: "213", name: "Kelvin", email: "kelvin@gmail.com" },
+  isAuth: true,
+  posts: [{ _id: "1", title: "post1", content: "G'day" }],
+};
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case "createPost":
@@ -18,6 +24,9 @@ export const reducer = (state, action) => {
       );
       return { ...state, posts: filtered };
 
+    case "auth":
+      return { ...state, isAuth: !state.isAuth };
+
     default:
       return console.log("default");
   }
@@ -26,4 +35,5 @@ export const reducer = (state, action) => {
 export const ACTION = {
   CREATEPOST: "createPost",
   DELETEPOST: "deletePost",
+  AUTH: "auth",
 };
